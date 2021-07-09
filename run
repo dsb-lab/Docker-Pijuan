@@ -1,9 +1,16 @@
 #!/bin/bash
 
+PATHIN="$(pwd)/in"
+PATHOUT="$(pwd)/out"
+echo $PATHOUT
+
 docker run --rm \
            -p 8888:8787 \
            -d \
            --name pijuan \
-           -v /home/dtang/r_packages/:/packages \
            -e PASSWORD=pijuan \
+           --mount type=bind,source=$PATHIN,destination=/home/rstudio//in \
+           --mount type=bind,source=$PATHOUT,destination=/home/rstudio//out \
            pijuan
+
+firefox localhost:8888
