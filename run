@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker run --rm \
+           -p 8888:8787 \
+           -d \
+           --name pijuan \
+           -v /home/dtang/r_packages/:/packages \
+           -e PASSWORD=pijuan \
+           pijuan
