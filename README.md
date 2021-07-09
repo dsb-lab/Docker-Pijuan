@@ -1,0 +1,1 @@
+Docker file documents in order to make a docker that reproduces the conditions of the analysis of [Pijuan-Sata et al](https://github.com/MarioniLab/EmbryoTimecourse2018).
