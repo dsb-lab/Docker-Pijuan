@@ -11,8 +11,10 @@ install.packages("viridis")
 install.packages("ggplot2")
 install.packages("https://cran.r-project.org/src/contrib/Archive/rmarkdown/rmarkdown_1.10.tar.gz")
 install.packages("https://cran.r-project.org/src/contrib/Archive/viridisLite/viridisLite_0.3.0.tar.gz")
+install.packages("RcppAnnoy") # v0.10 installed explicitely for the appropiate installation of BiocNeighbors
 
 #Uploading from Bioconductor
 BiocManager::install(version="3.8") #Closest version matching packages from the notebook
 BiocManager::install("biomaRt")
-BiocManager::install("BiocStyle")
+BiocManager::install("BiocNeighbors")
+BiocManager::install("scran")

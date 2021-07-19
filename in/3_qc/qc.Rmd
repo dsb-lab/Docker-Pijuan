@@ -14,19 +14,19 @@ output:
 library(Matrix)
 library(biomaRt)
 library(ggplot2)
-#library(knitr)
-#library(scales)
-#library(viridis)
+library(knitr)
+library(scales)
+library(viridis)
 
 #core functions inc. colour palette
 source("../core_functions.R")
 
 
-counts = readMM("../../Analysis/atlas_data/atlas/raw_counts.mtx")
+counts = readMM("../data/atlas/raw_counts.mtx")
 
-genes = read.table("../../Analysis/atlas_data/atlas/genes.tsv", stringsAsFactors = F)
-barcodes = read.table("../../Analysis/atlas_data/atlas/barcodes.tsv", stringsAsFactors = F)[,1]
-#exp_design = read.table("../../Analysis/atlas_data/atlas/sample_stage_map.csv", sep = ",", header = TRUE)
+genes = read.table("../data/atlas/genes.tsv", stringsAsFactors = F)
+barcodes = read.table("../data/atlas/barcodes.tsv", stringsAsFactors = F)[,1]
+#exp_design = read.table("../data/atlas/sample_stage_map.csv", sep = ",", header = TRUE)
 
 ```
 

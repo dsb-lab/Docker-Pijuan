@@ -2,4 +2,7 @@
 
 mkdir /in/data
 
-curl https://content.cruk.cam.ac.uk/jmlab/atlas_data.tar.gz > ./in/data/atlas_data.tar.gz
+# curl https://content.cruk.cam.ac.uk/jmlab/atlas_data.tar.gz > ./in/data/atlas_data.tar.gz
+
+tar -xf ./in/data/atlas_data.tar.gz -C ./in/data
+rm ./in/data/atlas_data.tar.gz

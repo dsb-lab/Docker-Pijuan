@@ -114,10 +114,10 @@ load_data = function(normalise = TRUE, remove_doublets = FALSE, remove_stripped 
   require(SingleCellExperiment)
   require(Matrix)
   
-  counts = readMM("../../Analysis/atlas_data/atlas/raw_counts.mtx")
-  #counts = readRDS("../../Analysis/atlas_data/atlas/raw_counts.rds")
-  genes = read.table("../../Analysis/atlas_data/atlas/genes.tsv", stringsAsFactors = F)
-  meta = read.table("../../Analysis/atlas_data/atlas/meta.tab", header = TRUE, sep = "\t", stringsAsFactors = FALSE, comment.char = "$")
+  counts = readMM("../data/atlas/raw_counts.mtx")
+  #counts = readRDS("../data/atlas/raw_counts.rds")
+  genes = read.table("../data/atlas/genes.tsv", stringsAsFactors = F)
+  meta = read.table("../data/atlas/meta.tab", header = TRUE, sep = "\t", stringsAsFactors = FALSE, comment.char = "$")
   
   rownames(counts) = genes[,1] #ensembl
   colnames(counts) = meta$cell
@@ -125,7 +125,7 @@ load_data = function(normalise = TRUE, remove_doublets = FALSE, remove_stripped 
   sce = SingleCellExperiment(assays = list("counts" = counts))
   
   if(normalise){
-    sfs = read.table("../../Analysis/atlas_data/atlas/sizefactors.tab", stringsAsFactors = F)[,1]
+    sfs = read.table("../data/atlas/sizefactors.tab", stringsAsFactors = F)[,1]
     sizeFactors(sce) = sfs
     sce = scater::logNormCounts(sce,size.factors=sfs)
   }
@@ -141,7 +141,7 @@ load_data = function(normalise = TRUE, remove_doublets = FALSE, remove_stripped 
   }
   
   if(load_corrected){
-    corrected = readRDS("../../Analysis/atlas_data/atlas/corrected_pcas.rds")
+    corrected = readRDS("../data/atlas/corrected_pcas.rds")
     assign("corrected", corrected, envir = .GlobalEnv)
     
   }

@@ -6,6 +6,8 @@ PATHIN="$(pwd)/in"
 PATHOUT="$(pwd)/out"
 echo $PATHOUT
 
+docker stop pijuan
+
 docker run --rm \
            -p 8888:8787 \
            -d \
