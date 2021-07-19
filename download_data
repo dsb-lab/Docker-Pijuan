@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir /in/data
+
+curl https://content.cruk.cam.ac.uk/jmlab/atlas_data.tar.gz > ./in/data/atlas_data.tar.gz

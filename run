@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir out
+
 PATHIN="$(pwd)/in"
 PATHOUT="$(pwd)/out"
 echo $PATHOUT
